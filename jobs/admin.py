@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+#imports Job app model to the admin interface for the entire project
+from .models import Job
+
+admin.site.register(Job)
