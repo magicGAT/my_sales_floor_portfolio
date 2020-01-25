@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>GTP · Blog</title>
+    <title>GTP · Social Media</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -49,23 +49,33 @@
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">TEST</h4>
+          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+        </div>
         <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Contact</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Follow on Twitter</a></li>
+            <li><a href="#" class="text-white">Like on Facebook</a></li>
+            <li><a href="#" class="text-white">Email me</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home'%}">Gregory Taylor</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Gregory Taylor</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'socialmedia' %}">Social Media<span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="{% url 'socialmedia' %}">Social Media<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
+          <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'aboutme' %}">About Me</a>
@@ -80,29 +90,21 @@
 
 <main role="main">
 
-  <div class="container">
-  <h1 class="text-center pt-4">Greg's Blog</h1>
-  <hr />
-  <br />
-  <br />
-  <h2>Latest</h2>  
-  <hr />
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1>Social Media</h1>
+      <p class="lead text-muted">A humble millenial with his eyes on a loftier state</p>
+      <p>
+      </p>
+    </div>
+  </section>
 
-  </div>
-
-    <div class="album py-5 bg-light">
+  <div class="album py-5 bg-light">
     <div class="container">
 
-      {% for post in blogs.all %}
-      <a href="{% url 'detail' post.id %}"><h3>{{ post.title }}</h3></a>
-      <p>{{ post.date }}</p>
-      <br />
-      <img class = "img-fluid" src= "{{ post.image.url }}" height=200 width=200 />
-      <br />
-      <br />
-      <br />
-      <p>{{post.summary}}</p>
-      {% endfor %}
+      <div class="row">
+<!-- INSERT TEXT HERE -->
+      </div>
     </div>
   </div>
 

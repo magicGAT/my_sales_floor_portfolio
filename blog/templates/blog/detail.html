@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>FOUNDATIONS COMPLETE · Bootstrap</title>
+    <title>GTP · {{post.title}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -62,13 +62,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Social Media<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'socialmedia' %}">Social Media<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About Me</a>
+          <a class="nav-link" href="{% url 'aboutme' %}">About Me</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% static 'data_resume_static.pdf' %}" tabindex="-1" aria-disabled="true">Resume</a>

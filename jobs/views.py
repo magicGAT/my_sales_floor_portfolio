@@ -9,3 +9,6 @@ def home(request):
 
 def about(request):
 	return render(request, 'jobs/aboutme.html')
+
+def social_media(request):
+	return render(request, 'jobs/social_media.html')
