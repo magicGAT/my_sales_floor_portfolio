@@ -49,23 +49,13 @@
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">TEST</h4>
-          <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-        </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
         </div>
       </div>
     </div>
   </div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}">Gregory Taylor</a>
+    <a class="navbar-brand" href="{% url 'home'%}">Gregory Taylor</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -75,7 +65,7 @@
           <a class="nav-link" href="#">Social Media<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+          <a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About Me</a>
@@ -90,38 +80,29 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
+  <div class="container">
+  <h1 class="text-center pt-4">Greg's Blog</h1>
+  <hr />
+  <br />
+  <br />
+  <h2>Latest</h2>  
+  <hr />
+
+  </div>
+
+    <div class="album py-5 bg-light">
     <div class="container">
-      <h1>Welcome!</h1>
-      <p class="lead text-muted">This is Gregroy Taylor's personal portfolio. Here you can peruse my personal projects and professional background. Please, connect with me via Social Media or Email if interested in my services</p>
-      <p>
-        <a href="mailto:magicgat@msn.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
-      <img src="{% static 'IMG_3103.jpg' %}" height=266 width=277 style="transform:rotate(90deg);"></img>
-    </div>
-  </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-
-      {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm" style="width:333px;">
-            <img class="job-image" src="{{job.image.url}}" height=333 width=333></img>
-            <div class="card-body" style="width:333px;">
-              <p class="card-text">{{ job.summary }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+      {% for post in blogs.all %}
+      <a href="{% url 'detail' post.id %}"><h3>{{ post.title }}</h3></a>
+      <p>{{ post.date }}</p>
+      <br />
+      <img class = "img-fluid" src= "{{ post.image.url }}" height=200 width=200 />
+      <br />
+      <br />
+      <br />
+      <p>{{post.summary}}</p>
+      {% endfor %}
     </div>
   </div>
 
@@ -136,4 +117,3 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script></body>
 </html>
-
